@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from '../model/pedido';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-pedido',
@@ -22,12 +23,22 @@ export class PedidoComponent implements OnInit {
        producto:"algo",
        total:300
     })
-
+    Swal.fire({
+      title:"Producto agregado",
+      text: "Se agrego correctamente",
+      icon: 'success'
+    }
+    );
   }
 
   elHijoEliminoAlgo(evento:any){
     this.pedido.pedidoDetalle.splice(evento.id,1);
     console.log(evento);
+    Swal.fire({
+      title:"Producto eliminado",
+      text: "Se elimino correctamente",
+      icon: 'warning'
+    });
   }
 
 }
