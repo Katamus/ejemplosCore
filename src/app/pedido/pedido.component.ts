@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Pedido } from '../model/pedido';
 import Swal from 'sweetalert2'
 
@@ -10,9 +10,15 @@ import Swal from 'sweetalert2'
 export class PedidoComponent implements OnInit {
   pedido:Pedido = new Pedido();
   mostrar:boolean = false;
+  @ViewChild('buscador',{static:true}) buscador!:ElementRef;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(){
+    console.log(this.buscador);
+    this.buscador.nativeElement.focus();
   }
 
   agregarProducto(){
