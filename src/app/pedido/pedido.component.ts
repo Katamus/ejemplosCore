@@ -9,6 +9,7 @@ import Swal from 'sweetalert2'
 })
 export class PedidoComponent implements OnInit {
   pedido:Pedido = new Pedido();
+  mostrar:boolean = false;
   constructor() { }
 
   ngOnInit(): void {
