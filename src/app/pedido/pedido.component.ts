@@ -48,4 +48,12 @@ export class PedidoComponent implements OnInit {
     });
   }
 
+  ngOnDestroy(){
+    Swal.fire({
+      title:"Salir",
+      text: "Estas abandonando los pedidos",
+      icon: 'warning'
+    });
+  }
+
 }
